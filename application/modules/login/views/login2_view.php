@@ -61,7 +61,7 @@
       <div class="page-content vertical-align-middle animation-slide-top animation-duration-1">
         <div class="brand">
           <img class="brand-img" src="<?php echo base_url("assets"); ?>/assets//images/logo.png" alt="...">
-          <h2 class="brand-text">Sistem Pendukung Keputusan Penyakit</h2>
+          <h2 class="brand-text">Sistem Pakar Kebutuhan Vitamin</h2>
         </div>
         <p>Silahkan Login </p>
         <form id="frmlogin" method="post"  >
@@ -81,7 +81,7 @@
         <p>Belum terdaftar ?  <a href="<?php echo site_url("login/daftar"); ?>">Daftar di sini </a></p>
 
         <footer class="page-copyright page-copyright-inverse">
-          <p>Dibuat oleh Riani</p>
+          <p>Dibuat oleh Edhita</p>
           <p>© 2019. USTJ - JAYAPURA .</p>
           <div class="social">
             <a class="btn btn-icon btn-pure" href="javascript:void(0)">
