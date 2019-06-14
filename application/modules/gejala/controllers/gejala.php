@@ -19,7 +19,7 @@ class gejala extends master_controller {
 		 
 		$content = $this->load->view($this->controller."_view",$data_array,true);
 
-		$this->set_title("DATA GEJALA PENYAKIT");
+		$this->set_title("DATA GEJALA");
 		$this->set_content($content);
 		$this->render();
 	}
@@ -42,9 +42,9 @@ class gejala extends master_controller {
  		if($this->form_validation->run() == TRUE ) { 
  			unset($post['id']);
 
- 			$arr_penyakit = isset($post['id_penyakit'])?$post['id_penyakit']:array();
+ 			$arr_vitamin = isset($post['id_vitamin'])?$post['id_vitamin']:array();
 
- 			unset($post['id_penyakit']);
+ 			unset($post['id_vitamin']);
 
  			$res = $this->db->insert("gejala",$post);
  			$id_gejala = $this->db->insert_id();
@@ -54,10 +54,10 @@ class gejala extends master_controller {
  				$this->db->where("id_gejala",$id_gejala);
  				$this->db->delete("pengetahuan");
 
- 				foreach($arr_penyakit as $id_penyakit):
+ 				foreach($arr_vitamin as $id_vitamin):
  					$arr_pengetahuan = array(
 
- 						"id_penyakit" => $id_penyakit,
+ 						"id_vitamin" => $id_vitamin,
  						"id_gejala" => $id_gejala
  					);
  					$this->db->insert("pengetahuan",$arr_pengetahuan);
@@ -97,8 +97,8 @@ class gejala extends master_controller {
  			// unset($post['id']);
 
 
- 			$arr_penyakit = isset($post['id_penyakit'])?$post['id_penyakit']:array();
- 			unset($post['id_penyakit']);
+ 			$arr_vitamin = isset($post['id_vitamin'])?$post['id_vitamin']:array();
+ 			unset($post['id_vitamin']);
 
 
  			$this->db->where("id",$post['id']);
@@ -109,10 +109,10 @@ class gejala extends master_controller {
  				$this->db->where("id_gejala",$post['id']);
  				$this->db->delete("pengetahuan");
 
- 				foreach($arr_penyakit as $id_penyakit):
+ 				foreach($arr_vitamin as $id_vitamin):
  					$arr_pengetahuan = array(
 
- 						"id_penyakit" => $id_penyakit,
+ 						"id_vitamin" => $id_vitamin,
  						"id_gejala" => $post['id']
  					);
  					$this->db->insert("pengetahuan",$arr_pengetahuan);
@@ -156,25 +156,25 @@ function hapus($id) {
 }
 
 
-function get_penyakit($id_gejala){
+function get_vitamin($id_gejala){
 
 	$this->db->where("id_gejala",$id_gejala);
 	$res = $this->db->get("pengetahuan");
 	$arr_pengetahuan = array();
 	foreach($res->result() as $row) : 
-		$arr_pengetahuan[] = $row->id_penyakit;
+		$arr_pengetahuan[] = $row->id_vitamin;
 	endforeach;
 
 	// show_array($arr_pengetahuan);exit;
 
 	$this->db->order_by("kode");
-	$res  = $this->db->get("penyakit");
+	$res  = $this->db->get("vitamin");
 
-	foreach($res->result() as $row_penyakit): 
-		$selected = ( in_array($row_penyakit->id, $arr_pengetahuan) )?"selected":"";
-		echo "<option value=$row_penyakit->id $selected>$row_penyakit->kode $row_penyakit->penyakit</option>";
+	foreach($res->result() as $row_vitamin): 
+		$selected = ( in_array($row_vitamin->id, $arr_pengetahuan) )?"selected":"";
+		echo "<option value=$row_vitamin->id $selected>$row_vitamin->kode $row_vitamin->vitamin</option>";
 
-		// $arr[] = array("id"=>$row_penyakit->id,"text"=>"$row_penyakit->kode $row_penyakit->penyakit");
+		// $arr[] = array("id"=>$row_vitamin->id,"text"=>"$row_vitamin->kode $row_vitamin->vitamin");
 	endforeach;
 
 	// $ret = array("result"=>$arr);
@@ -186,20 +186,20 @@ function get_penyakit($id_gejala){
 }
 
 
-function get_penyakit_all(){
+function get_vitamin_all(){
 
 	 
 
 	// show_array($arr_pengetahuan);exit;
 
 	$this->db->order_by("kode");
-	$res  = $this->db->get("penyakit");
+	$res  = $this->db->get("vitamin");
 
-	foreach($res->result() as $row_penyakit): 
+	foreach($res->result() as $row_vitamin): 
 		 
-		echo "<option value=$row_penyakit->id >$row_penyakit->kode $row_penyakit->penyakit</option>";
+		echo "<option value=$row_vitamin->id >$row_vitamin->kode $row_vitamin->vitamin</option>";
 
-		// $arr[] = array("id"=>$row_penyakit->id,"text"=>"$row_penyakit->kode $row_penyakit->penyakit");
+		// $arr[] = array("id"=>$row_vitamin->id,"text"=>"$row_vitamin->kode $row_vitamin->vitamin");
 	endforeach;
 
 	// $ret = array("result"=>$arr);

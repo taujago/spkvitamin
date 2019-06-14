@@ -15,7 +15,7 @@ span.select2-container {
 
 
 <div class="table-responsive">
-	<table id="tabel" class="table card-table table-vcenter text-nowrap">
+	<table id="tabel" class="table card-table table-vcenter  ">
 		<thead >
 			<tr>
 				<th width="5%">NO </th>
@@ -75,9 +75,9 @@ foreach($record->result() as $row) :
 						<label for="gejala" class="form-control-label">Penyakit :</label>
 
 						<?php 
-	$arr_penyakit = $this->cm->arr_dropdown_penyakit();
-	$arr_penyakit = array();
-	echo form_dropdown("id_penyakit[]",$arr_penyakit,'','id="id_penyakit" class="form-control" multiple="multiple" style="width:100%"');
+	$arr_vitamin = $this->cm->arr_dropdown_vitamin();
+	$arr_vitamin = array();
+	echo form_dropdown("id_vitamin[]",$arr_vitamin,'','id="id_vitamin" class="form-control" multiple="multiple" style="width:100%"');
 
 	?>
   

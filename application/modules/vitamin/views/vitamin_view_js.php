@@ -109,9 +109,9 @@ $("#frmkriteria").submit(function(){
 
 	function tambahbaru(){
 		$("#formModal").modal('show');
-		$("#judul").html('TAMBAH DATA PENYAKIT ');
+		$("#judul").html('TAMBAH DATA VITAMIN ');
 		$("#kode").val('');
-		$("#penyakit").val('');
+		$("#vitamin").val('');
 		v_url = '<?php echo site_url("$this->controller/save") ?>';
 
 
@@ -135,7 +135,7 @@ $("#frmkriteria").submit(function(){
 
 
 
-function edit(id,kode,penyakit,penanganan,pencegahan){
+function edit(id,kode,vitamin,sumber_vitamin,fungsi){
 	$("#judul").html('EDIT DATA PENYAKIT ');
 	
 	v_url = '<?php echo site_url("$this->controller/update") ?>';
@@ -144,9 +144,9 @@ function edit(id,kode,penyakit,penanganan,pencegahan){
 
 	$("#id").val(id);
 	$("#kode").val(kode);
-	$("#penyakit").val(penyakit);
-	$("#penanganan").val(penanganan);
-	$("#pencegahan").val(pencegahan);
+	$("#vitamin").val(vitamin);
+	$("#sumber_vitamin").val(sumber_vitamin);
+	$("#fungsi").val(fungsi);
 	$("#formModal").modal('show');
 
 

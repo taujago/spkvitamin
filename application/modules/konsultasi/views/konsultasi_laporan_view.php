@@ -2,7 +2,7 @@
 	<thead>
 		<tr>
 			<th rowspan="2">No. </th>
-			<th rowspan="2">Penyakit </th>
+			<th rowspan="2">Vitamin </th>
 			<th colspan="2">Jumlah Pasien
 			<th rowspan="2">Jumlah </th>
 
@@ -26,7 +26,7 @@
 		?>
 		<tr>
 			<td><?php echo $n; ?></td>
-			<td><?php echo $row->penyakit; ?></td>
+			<td><?php echo $row->vitamin; ?></td>
 			<td><?php echo $row->L; ?></td>
 			<td><?php echo $row->P; ?></td>
 			<td><?php echo $row->jumlah; ?></td>

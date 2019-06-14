@@ -22,15 +22,15 @@ span.select2-container {
 
 
 <div class="table-responsive">
-	<table id="tabel" class="table card-table table-vcenter text-nowrap">
+	<table id="tabel" class="table card-table table-vcenter  ">
 		<thead >
 			<tr>
 				<th width="5%">NO </th>
 				<th width="5%">KODE </th>
-				<th width="50%">PENYAKIT</th>
-				<th width="50%">PENANGANAN</th>
-				<th width="50%">PENCEGAHAN</th>
-				<th width="10%">GAMBAR</th>
+				<th width="10%">JENIS VITAMIN</th>
+				<th width="50%">SUMBER VITAMIN</th>
+				<th width="50%">FUNGSI</th>
+			 
 				<th width="10%">PROSES</th>
 				 
 			</tr>
@@ -48,13 +48,14 @@ $image = (!empty($row->gambar))?$row->gambar:"noimage.png";
 			<tr>
 				<th scope="row"><?php echo $n ?></th>
 				<td><?php echo $row->kode; ?></td>
-				<td><?php echo $row->penyakit; ?></td>
-				<td><?php echo $row->penanganan; ?></td>
-				<td><?php echo $row->pencegahan; ?></td>
-				<td><img width="70px" height="70px" src="<?php echo base_url("uploads/$image") ?>"></td>
+				<td><?php echo $row->vitamin; ?></td>
+				<td><?php echo $row->sumber_vitamin; ?></td>
+				<td><?php echo $row->fungsi; ?></td>
+				 
+				 
 				<td>
-					<a href="#!"  onclick="edit('<?php echo $row->id; ?>','<?php echo $row->kode; ?>','<?php echo $row->penyakit; ?>','<?php echo $row->penanganan; ?>','<?php echo $row->pencegahan; ?>');"  class="btn btn-warning text-light"><i class="fa fa-pencil"></i>Edit</a>
-					<a href="#!" onclick="hapus('<?php echo $row->id; ?>');"  class="btn btn-danger text-light"><i class="fa fa-trash"></i>Hapus	</a>
+					<a href="#!"  onclick="edit('<?php echo $row->id; ?>','<?php echo $row->kode; ?>','<?php echo $row->vitamin; ?>','<?php echo $row->sumber_vitamin; ?>','<?php echo $row->fungsi; ?>');"  class="mt-2 btn btn-warning text-light"><i class="fa fa-pencil"></i>Edit</a>
+					<a href="#!" onclick="hapus('<?php echo $row->id; ?>');"  class="mt-2 btn btn-danger text-light"><i class="fa fa-trash"></i>Hapus	</a>
 </td>
 			</tr>
 <?php endforeach; ?> 
@@ -68,7 +69,7 @@ $image = (!empty($row->gambar))?$row->gambar:"noimage.png";
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="judul">Tambah Data Penyakit </h5>
+				<h5 class="modal-title" id="judul">Tambah Data Vitamin </h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -81,31 +82,24 @@ $image = (!empty($row->gambar))?$row->gambar:"noimage.png";
 						<input type="text" name="kode" class="form-control" id="kode">
 					</div>
 					<div class="form-group">
-						<label for="gejala" class="form-control-label">Penyakit:</label>
-						<input type="text"  name="penyakit" class="form-control" id="penyakit">
+						<label for="vitamin" class="form-control-label">Vitamin :</label>
+						<input type="text"  name="vitamin" class="form-control" id="vitamin">
 
 					</div>
 
 					<div class="form-group">
-						<label for="penanganan" class="form-control-label">Penanganan :</label>
-						<textarea class="form-control" name="penanganan" id="penanganan"></textarea>
+						<label for="sumber_vitamin" class="form-control-label">Sumber Vitamin :</label>
+						<textarea class="form-control" name="sumber_vitamin" id="sumber_vitamin"></textarea>
 
 					</div>
 
 					<div class="form-group">
-						<label for="pencegahan" class="form-control-label">Pencegahan :</label>
-						<textarea class="form-control" name="pencegahan" id="pencegahan"></textarea>
+						<label for="fungsi" class="form-control-label">Fungsi :</label>
+						<textarea class="form-control" name="fungsi" id="fungsi"></textarea>
 
 					</div>
 
-					<div class="form-group">
-						<label for="gambar" class="form-control-label">Gambar  :</label>
-						 
-					      <input type="file" class="form-control" id="gambar" name="gambar">
-					       
-					     
-
-					</div>
+					 
 
 
 
@@ -118,9 +112,9 @@ $image = (!empty($row->gambar))?$row->gambar:"noimage.png";
 						<label for="gejala" class="form-control-label">Gejala :</label>
 
 						<?php 
-	// $arr_penyakit = $this->cm->arr_dropdown_penyakit();
-	$arr_penyakit = array();
-	echo form_dropdown("id_gejala[]",$arr_penyakit,'','id="id_gejala" class="form-control" multiple="multiple" style="width:100%"');
+	// $arr_vitamin = $this->cm->arr_dropdown_vitamin();
+	$arr_vitamin = array();
+	echo form_dropdown("id_gejala[]",$arr_vitamin,'','id="id_gejala" class="form-control" multiple="multiple" style="width:100%"');
 
 	?>
   

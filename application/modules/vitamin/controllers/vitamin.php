@@ -1,5 +1,5 @@
 <?php
-class penyakit extends master_controller {
+class vitamin extends master_controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model("coremodel","cm");
@@ -13,13 +13,13 @@ class penyakit extends master_controller {
 		$data_array = array();
 
 
-		$this->db->select('*')->from('penyakit');
+		$this->db->select('*')->from('vitamin');
 		$res = $this->db->get();
 		$data_array['record'] = $res; 
 		 
 		$content = $this->load->view($this->controller."_view",$data_array,true);
 
-		$this->set_title("DATA  PENYAKIT");
+		$this->set_title("DATA  VITAMIN");
 		$this->set_content($content);
 		$this->render();
 	}
@@ -29,13 +29,13 @@ class penyakit extends master_controller {
 		$data_array = array();
 
 
-		$this->db->select('*')->from('penyakit');
+		$this->db->select('*')->from('vitamin');
 		$res = $this->db->get();
 		$data_array['record'] = $res; 
 		 
 		$content = $this->load->view($this->controller."_view_list",$data_array,true);
 
-		$this->set_title("INFORMASI DATA PENYAKIT");
+		$this->set_title("INFORMASI DATA vitamin");
 		$this->set_content($content);
 		$this->render();
 	}
@@ -85,7 +85,7 @@ class penyakit extends master_controller {
 
 		$this->load->library('form_validation');
  		$this->form_validation->set_rules('kode','Kode','required');
- 		$this->form_validation->set_rules('penyakit','penyakit','required');
+ 		$this->form_validation->set_rules('vitamin','vitamin','required');
  		
 		 
 		$this->form_validation->set_message('required', ' %s Harus diisi ');
@@ -99,26 +99,26 @@ class penyakit extends master_controller {
 
  			unset($post['id_gejala']);
 
- 			$res = $this->db->insert("penyakit",$post);
- 			$id_penyakit = $this->db->insert_id();
+ 			$res = $this->db->insert("vitamin",$post);
+ 			$id_vitamin = $this->db->insert_id();
 
  			if($res){
 
- 				$this->db->where("id_penyakit",$id_penyakit);
+ 				$this->db->where("id_vitamin",$id_vitamin);
  				$this->db->delete("pengetahuan");
 
  				foreach($arr_gejala as $id_gejala):
  					$arr_pengetahuan = array(
 
  						"id_gejala" => $id_gejala,
- 						"id_penyakit" => $id_penyakit
+ 						"id_vitamin" => $id_vitamin
  					);
  					// show_array($arr_pengetahuan); 
  					$this->db->insert("pengetahuan",$arr_pengetahuan);
  				endforeach;
 
 
- 				$ret = array("error"=>false,"message"=>"Data penyakit berhasil disimpan");
+ 				$ret = array("error"=>false,"message"=>"Data vitamin berhasil disimpan");
  			}
  			else {
  				$ret = array("error"=>true,"message"=>"Data gagal disimpan".mysql_error());
@@ -174,7 +174,7 @@ class penyakit extends master_controller {
 
 		$this->load->library('form_validation');
  		$this->form_validation->set_rules('kode','Kode','required');
- 		$this->form_validation->set_rules('penyakit','penyakit','required');
+ 		$this->form_validation->set_rules('vitamin','vitamin','required');
  		
 		 
 		$this->form_validation->set_message('required', ' %s Harus diisi ');
@@ -193,25 +193,25 @@ class penyakit extends master_controller {
 
 
  			$this->db->where("id",$post['id']);
- 			$res = $this->db->update("penyakit",$post);
+ 			$res = $this->db->update("vitamin",$post);
 
  			if($res){
 
- 				$this->db->where("id_penyakit",$post['id']);
+ 				$this->db->where("id_vitamin",$post['id']);
  				$this->db->delete("pengetahuan");
 
  				foreach($arr_gejala as $id_gejala):
  					$arr_pengetahuan = array(
 
  						"id_gejala" => $id_gejala,
- 						"id_penyakit" => $post['id']
+ 						"id_vitamin" => $post['id']
  					);
  					$this->db->insert("pengetahuan",$arr_pengetahuan);
  				endforeach;
 
 
 
- 				$ret = array("error"=>false,"message"=>"Data penyakit berhasil diupdate");
+ 				$ret = array("error"=>false,"message"=>"Data vitamin berhasil diupdate");
  			}
  			else {
  				$ret = array("error"=>true,"message"=>"Data gagal diupdate".mysql_error());
@@ -230,10 +230,10 @@ class penyakit extends master_controller {
 function hapus($id) {
 
 	$this->db->where("id",$id);
-	$res = $this->db->delete("penyakit");
+	$res = $this->db->delete("vitamin");
 	if($res){
 
-		$this->db->where("id_penyakit",$id);
+		$this->db->where("id_vitamin",$id);
 		$this->db->delete("pengetahuan");
 
 
@@ -247,9 +247,9 @@ function hapus($id) {
 }
 
 
-function get_gejala($id_penyakit){
+function get_gejala($id_vitamin){
 
-	$this->db->where("id_penyakit",$id_penyakit);
+	$this->db->where("id_vitamin",$id_vitamin);
 	$res = $this->db->get("pengetahuan");
 	$arr_pengetahuan = array();
 	foreach($res->result() as $row) : 
@@ -265,7 +265,7 @@ function get_gejala($id_penyakit){
 		$selected = ( in_array($row_gejala->id, $arr_pengetahuan) )?"selected":"";
 		echo "<option value=$row_gejala->id $selected>$row_gejala->kode $row_gejala->gejala</option>";
 
-		// $arr[] = array("id"=>$row_gejala->id,"text"=>"$row_gejala->kode $row_gejala->penyakit");
+		// $arr[] = array("id"=>$row_gejala->id,"text"=>"$row_gejala->kode $row_gejala->vitamin");
 	endforeach;
 
 	// $ret = array("result"=>$arr);
@@ -290,7 +290,7 @@ function get_gejala_all(){
 		 
 		echo "<option value=$row_gejala->id >$row_gejala->kode $row_gejala->gejala</option>";
 
-		// $arr[] = array("id"=>$row_gejala->id,"text"=>"$row_gejala->kode $row_gejala->penyakit");
+		// $arr[] = array("id"=>$row_gejala->id,"text"=>"$row_gejala->kode $row_gejala->vitamin");
 	endforeach;
 
 	// $ret = array("result"=>$arr);
@@ -305,17 +305,17 @@ function get_gejala_all(){
 function pengetahuan(){
 
 
-// $data_array['rec_penyakit'] = $res; 
+// $data_array['rec_vitamin'] = $res; 
 
 $data_array['rec_gejala'] = $this->db->get("gejala");
 
 $n=0;
-$res  = $this->db->get("penyakit");
+$res  = $this->db->get("vitamin");
 
 foreach($res->result() as $row) : 
 	$n++;
 	
-	$this->db->where("id_penyakit",$row->id);
+	$this->db->where("id_vitamin",$row->id);
 	$rs_pen  = $this->db->get("pengetahuan");
 	$arr_gejala = array();
 	foreach($rs_pen->result() as $rpen): 
@@ -326,7 +326,7 @@ foreach($res->result() as $row) :
 
 	$arr[$n]['no'] = $n;
 	$arr[$n]['kode'] = $row->kode;
-	$arr[$n]['penyakit'] = $row->penyakit;
+	$arr[$n]['vitamin'] = $row->vitamin;
 	$x=0;
 	foreach($data_array['rec_gejala']->result() as $rg): 
 		$arr[$n][$x] =  (in_array($rg->id,$arr_gejala))?$rg->kode:"";
@@ -341,7 +341,7 @@ $data_array['data'] = $arr;
 
 // get pengetahuan by gejala
 
-$data_array['rec_penyakit'] = $this->db->get("penyakit");
+$data_array['rec_vitamin'] = $this->db->get("vitamin");
 
 $n=0;
 $res = $this->db->get("gejala");
@@ -352,12 +352,12 @@ foreach($res->result() as $row) :
 	$this->db->where("id_gejala",$row->id);
 	$rs_gj  = $this->db->get("pengetahuan");
 	// echo $this->db->last_query()."<hr />";
-	$arr_penyakit = array();
+	$arr_vitamin = array();
 	foreach($rs_gj->result() as $rpen): 
-		$arr_penyakit[] = $rpen->id_penyakit;
+		$arr_vitamin[] = $rpen->id_vitamin;
 	endforeach;
 	// echo "id $row->id"; 
-	// show_array($arr_penyakit);
+	// show_array($arr_vitamin);
 
 
 
@@ -365,8 +365,8 @@ foreach($res->result() as $row) :
 	$data_gejala[$n]['kode'] = $row->kode;
 	$data_gejala[$n]['gejala'] = $row->gejala;
 	$x=0;
-	foreach($data_array['rec_penyakit']->result() as $rg): 
-		$data_gejala[$n][$x] =  (in_array($rg->id,$arr_penyakit))?$rg->kode:"";
+	foreach($data_array['rec_vitamin']->result() as $rg): 
+		$data_gejala[$n][$x] =  (in_array($rg->id,$arr_vitamin))?$rg->kode:"";
 		$x++;
 	endforeach;
 

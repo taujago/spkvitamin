@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 $("#tabel").dataTable(); 
 
-$("#id_penyakit").select2();
+$("#id_vitamin").select2();
 
 	$("#btnsimpan").click(function(){
 		$.ajax({
@@ -43,6 +43,7 @@ $("#id_penyakit").select2();
 
 
 	function tambahbaru(){
+		$("#judul").html('TAMBAH DATA GEJALA ');
 		$("#formModal").modal('show');
 		$("#kode").val('');
 		$("#gejala").val('');
@@ -50,11 +51,11 @@ $("#id_penyakit").select2();
 
 
 		$.ajax({
-		url : '<?php echo site_url("$this->controller/get_penyakit_all") ?>/',
+		url : '<?php echo site_url("$this->controller/get_vitamin_all") ?>/',
  		success : function(htmldata){
 			 
 
-		$("#id_penyakit").select2('destroy').html(htmldata).select2();
+		$("#id_vitamin").select2('destroy').html(htmldata).select2();
  
 	
 	
@@ -86,11 +87,11 @@ function edit(id,kode,gejala){
 
 
 	 $.ajax({
-		url : '<?php echo site_url("$this->controller/get_penyakit") ?>/'+id,
+		url : '<?php echo site_url("$this->controller/get_vitamin") ?>/'+id,
 		success : function(htmldata){
 			 
 
-		$("#id_penyakit").select2('destroy').html(htmldata).select2();
+		$("#id_vitamin").select2('destroy').html(htmldata).select2();
  
 
 

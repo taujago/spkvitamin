@@ -19,8 +19,8 @@
 
 	<div class="col-md-3"><strong> Alamat </strong></div>
 	<div class="col-md-3">: <?php echo $userdata['alamat']; ?> </div>
-	<div class="col-md-3"><strong> Tanggal Pemeriksaan </strong></div>
-	<div class="col-md-3">: <?php //echo flipdate($userdata['tanggal']); ?> </div>
+	<div class="col-md-3"><strong> Tanggal Diagnosa </strong></div>
+	<div class="col-md-3">: <?php  echo flipdate($pemeriksaan->tanggal); ?> </div>
 
 </div>
 
@@ -42,23 +42,16 @@ if($found == 1 ) {
 <br />
 <strong>Hasil Diagnosa </strong>
 <br />
-<strong>Nama Penyakit : </strong> <br />
-<?php   echo $penyakit->penyakit ; ?>
+<strong>Vitamin : </strong> <br />
+<?php   echo $vitamin->vitamin ; ?>
 <br /><br />
-<strong>Pencegahan : </strong><br />
-<?php   echo $penyakit->pencegahan; ?>
+<strong>Sumber vitamin : </strong><br />
+<?php   echo $vitamin->sumber_vitamin; ?>
 <br />
-<strong>Penanganan : </strong><br />
-<?php   echo $penyakit->penanganan; ?>
+<strong>fungsi : </strong><br />
+<?php   echo $vitamin->fungsi; ?>
 </div>	
-<div class="col-md-4">
-	<?php 
-$image = (!empty($row->gambar))?$row->gambar:"noimage.png";
-
-
-	?>
-	<img  src="<?php echo base_url("uploads/$image") ?>">
-</div>
+ 
 </div>
 <?php } 
 else {   ?> 

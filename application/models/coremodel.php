@@ -34,12 +34,12 @@ function arr_dropdown($vTable, $vINDEX, $vVALUE, $vORDERBY){
     return $arr;
  }
 
-function arr_dropdown_penyakit(){
+function arr_dropdown_vitamin(){
     $this->db->order_by("kode");
-    $res = $this->db->get("penyakit");
+    $res = $this->db->get("vitamin");
     $arr = array();
     foreach($res->result() as $row) : 
-        $arr[$row->id] = $row->kode." ".$row->penyakit;
+        $arr[$row->id] = $row->kode." ".$row->vitamin;
     endforeach;
     return $arr;
  }
@@ -54,12 +54,12 @@ function arr_dropdown_penyakit(){
     return $arr;
  }
 
- function get_gejala($id_penyakit) {
+ function get_gejala($id_vitamin) {
 
     $this->db->select('g.*')
     ->from('gejala g')
     ->join('pengetahuan p','p.id_gejala = g.id')
-    ->where('p.id_penyakit',$id_penyakit);
+    ->where('p.id_vitamin',$id_vitamin);
     return $this->db->get();
 
  }

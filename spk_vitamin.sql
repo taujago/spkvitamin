@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2019 at 01:23 PM
+-- Generation Time: Jun 14, 2019 at 10:34 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.36
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `spk_rianidb`
+-- Database: `spk_vitamin`
 --
 
 -- --------------------------------------------------------
@@ -30,65 +30,53 @@ CREATE TABLE IF NOT EXISTS `gejala` (
   `id` int(11) NOT NULL,
   `gejala` varchar(255) NOT NULL,
   `kode` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=321 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=362 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `gejala`
 --
 
 INSERT INTO `gejala` (`id`, `gejala`, `kode`) VALUES
-(269, 'Demam mendadak', 'G001'),
-(270, 'Menggigil', 'G002'),
-(271, 'Muka kemerahan', 'G003'),
-(272, 'Mual', 'G004'),
-(273, 'Muntah', 'G005'),
-(274, 'Nyeri punggung', 'G006'),
-(275, 'Sakit kepala', 'G007'),
-(276, 'Fotofobia', 'G008'),
-(277, 'Bercak merah pada kulit', 'G009'),
-(278, 'Nyeri sendi', 'G010'),
-(279, 'Panas tinggi secara tiba-tiba', 'G011'),
-(280, 'Tidak nafsu makan', 'G012'),
-(281, 'Badan lemas', 'G013'),
-(282, 'Gangguan abdomen', 'G014'),
-(283, 'Nyeri seluruh tubuh', 'G015'),
-(284, 'Pendarahan pada kulit, gusi, dan hidung ', 'G016'),
-(285, 'Kejang', 'G017'),
-(286, 'Batuk', 'G018'),
-(287, 'Syndrom shock dengue', 'G019'),
-(288, 'tekanan darah menurun', 'G020'),
-(289, 'Demam tinggi', 'G021'),
-(290, 'Radang saluran getah bening', 'G022'),
-(291, 'Demam selama beberapa hari', 'G023'),
-(292, 'Menggigil dan berkeringat', 'G024'),
-(293, 'Nyeri otot', 'G025'),
-(294, 'Pembengkakakan kelenjar getah bening', 'G026'),
-(295, 'Ketiak tampak kemerahan', 'G027'),
-(296, 'Pembesaran tungkai', 'G028'),
-(297, 'Pembesaran buah dada (pada wanita)', 'G029'),
-(298, 'Pembesaran buah zakar (pada pria)', 'G030'),
-(299, 'Mata merah', 'G031'),
-(300, 'Urine warna gelap', 'G032'),
-(301, 'Produksi urine berkurang', 'G033'),
-(302, 'Diare pada anak', 'G034'),
-(303, 'Denyut nadi melambat', 'G035'),
-(304, 'Gangguan berbicara dan berjalan', 'G036'),
-(305, 'Kejang 75% pada anak', 'G037'),
-(306, 'Perubahan status mental', 'G038'),
-(307, 'Gangguan sistem motorik', 'G039'),
-(308, 'Iritabilitas pada anak', 'G040'),
-(309, 'Sakit mata', 'G041'),
-(310, 'Flu', 'G042'),
-(311, 'Lumpuh', 'G043'),
-(312, 'Koma', 'G044'),
-(313, 'demam ringan timbul hilang', 'G045'),
-(314, 'Mengantuk', 'G046'),
-(315, 'Mengigau (delirium)', 'G047'),
-(316, 'Tidak enak badan', 'G048'),
-(317, 'Lelah disertai menggigil dan demam', 'G049'),
-(318, 'Sakit kepala hebat', 'G050'),
-(319, 'Anemia', 'G051'),
-(320, 'Gatal-gatal', 'G052');
+(322, 'Rabun senja', 'G01'),
+(323, 'Infeksi saluran pernafasan', 'G02'),
+(324, 'Kulit kering', 'G03'),
+(325, 'Daya tahan tubuh berkurang', 'G04'),
+(326, 'Katarak', 'G05'),
+(327, 'Beri-beri', 'G06'),
+(328, 'Kulit bersisik', 'G07'),
+(329, 'Mulut kering', 'G08'),
+(330, 'Bibir pecah-pecah', 'G09'),
+(331, 'Sariawan', 'G010'),
+(332, 'Lemah daya pengelihatan', 'G011'),
+(333, 'Kelelahan', 'G012'),
+(334, 'Tidak tahan terhadap cahaya', 'G013'),
+(335, 'Tubuh mengalami kejang', 'G014'),
+(336, 'Kram otot', 'G015'),
+(337, 'Gangguan sistem pencernaan', 'G016'),
+(338, 'Muntah-muntah', 'G017'),
+(339, 'Bengkak dibagian mulut dan lidah', 'G018'),
+(340, 'Kadar gula rendah dalam darah', 'G019'),
+(341, 'Kulit pecah-pecah', 'G020'),
+(342, 'Sakit kepala', 'G021'),
+(343, 'Kejang otot', 'G022'),
+(344, 'Gangguan mental', 'G023'),
+(345, 'Luka kemerahan pada lidah', 'G024'),
+(346, 'Sudut mulut yang pecah-pecah', 'G025'),
+(347, 'Mati rasa dan rasa seperti tertusuk jarum ditangan dan kaki', 'G026'),
+(348, 'Anemia', 'G027'),
+(349, 'Gangguan syaraf', 'G028'),
+(350, 'Gangguan pewarnaan pada kulit', 'G029'),
+(351, 'Nyeri otot', 'G030'),
+(352, 'Infeksi dan kulit bersisik', 'G031'),
+(353, 'Gigi lebih mudah rusak', 'G032'),
+(354, 'Diabetes', 'G033'),
+(355, 'Kanker', 'G034'),
+(356, 'Pertumbuhan tulang tidak normal', 'G035'),
+(357, 'Kelemahan otot', 'G036'),
+(358, 'Kemandulan pada pria / wanita', 'G037'),
+(359, 'Diare berat', 'G038'),
+(360, 'Ubun-ubun menonjol', 'G039'),
+(361, 'Pucat hingga kejang', 'G040');
 
 -- --------------------------------------------------------
 
@@ -166,16 +154,17 @@ CREATE TABLE IF NOT EXISTS `pemeriksaan` (
   `id` int(11) NOT NULL,
   `tanggal` date DEFAULT NULL,
   `user_id` int(11) NOT NULL,
-  `penyakit_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
+  `vitamin_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pemeriksaan`
 --
 
-INSERT INTO `pemeriksaan` (`id`, `tanggal`, `user_id`, `penyakit_id`) VALUES
+INSERT INTO `pemeriksaan` (`id`, `tanggal`, `user_id`, `vitamin_id`) VALUES
 (49, '2019-06-10', 1, 59),
-(50, '2019-06-10', 1, NULL);
+(50, '2019-06-10', 1, NULL),
+(51, '2019-06-14', 1, 75);
 
 -- --------------------------------------------------------
 
@@ -187,7 +176,7 @@ CREATE TABLE IF NOT EXISTS `pemeriksaan_detail` (
   `id` int(11) NOT NULL,
   `pemeriksaan_id` int(11) NOT NULL,
   `gejala_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=219 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=224 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pemeriksaan_detail`
@@ -206,7 +195,12 @@ INSERT INTO `pemeriksaan_detail` (`id`, `pemeriksaan_id`, `gejala_id`) VALUES
 (215, 49, 278),
 (216, 50, 271),
 (217, 50, 291),
-(218, 50, 298);
+(218, 50, 298),
+(219, 51, 322),
+(220, 51, 323),
+(221, 51, 324),
+(222, 51, 325),
+(223, 51, 326);
 
 -- --------------------------------------------------------
 
@@ -216,27 +210,21 @@ INSERT INTO `pemeriksaan_detail` (`id`, `pemeriksaan_id`, `gejala_id`) VALUES
 
 CREATE TABLE IF NOT EXISTS `pengetahuan` (
   `id` int(11) NOT NULL,
-  `id_penyakit` int(11) NOT NULL,
+  `id_vitamin` int(11) NOT NULL,
   `id_gejala` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=404 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=419 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pengetahuan`
 --
 
-INSERT INTO `pengetahuan` (`id`, `id_penyakit`, `id_gejala`) VALUES
-(394, 59, 269),
-(395, 59, 270),
-(396, 59, 271),
-(397, 59, 272),
-(398, 59, 273),
-(399, 59, 274),
-(400, 59, 275),
-(401, 59, 276),
-(402, 59, 277),
-(403, 59, 278),
-(365, 62, 217),
-(366, 63, 217);
+INSERT INTO `pengetahuan` (`id`, `id_vitamin`, `id_gejala`) VALUES
+(414, 75, 323),
+(416, 75, 327),
+(413, 75, 331),
+(415, 75, 347),
+(417, 85, 333),
+(418, 85, 357);
 
 -- --------------------------------------------------------
 
@@ -272,39 +260,6 @@ INSERT INTO `pengguna` (`id`, `username`, `password`, `level`, `nama`, `hp`, `al
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penyakit`
---
-
-CREATE TABLE IF NOT EXISTS `penyakit` (
-  `id` int(11) NOT NULL,
-  `kode` varchar(10) NOT NULL,
-  `penyakit` varchar(255) NOT NULL,
-  `penanganan` text NOT NULL,
-  `pencegahan` text NOT NULL,
-  `gambar` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `penyakit`
---
-
-INSERT INTO `penyakit` (`id`, `kode`, `penyakit`, `penanganan`, `pencegahan`, `gambar`) VALUES
-(59, 'P1', 'Chikungunya', 'Penangnagn 1 ', 'Pencegahan ', 'sharinggan1.jpg'),
-(60, 'P2', 'Demam Berdarah Dengue (DBD)', 'faf', 'fdfds', '32fe1ba3-d8bd-4c99-8415-9dc69587fdf83.jpg'),
-(61, 'P3', 'Kaki Gajah', '', '', 'bencanaalam.jpg'),
-(62, 'P4', 'Demam Kuning', '', '', ''),
-(63, 'P5', 'Radang Otak', '', '', ''),
-(64, 'P6', 'Virus West Nile', '', '', ''),
-(65, 'P7', 'Virus Zika', '', '', ''),
-(66, 'P8', 'Malaria Tertiana', '', '', ''),
-(67, 'P9', 'Malaria Quartana', '', '', ''),
-(68, 'P10', 'Malaria Tropica', '', '', ''),
-(71, '2424', 'asdfaddsaf', 'fsdafdsadfd', 'fsafsda', ''),
-(72, '342', 'fafd', 'fad', 'fdafd', 'logo-lantas-baru12.png');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tmp`
 --
 
@@ -333,6 +288,37 @@ INSERT INTO `tmp` (`id_penyakit`, `skor`) VALUES
 (50, 0.0666667),
 (51, 0.0666667),
 (52, 0.0666667);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vitamin`
+--
+
+CREATE TABLE IF NOT EXISTS `vitamin` (
+  `id` int(11) NOT NULL,
+  `kode` varchar(10) NOT NULL,
+  `vitamin` varchar(255) NOT NULL,
+  `sumber_vitamin` text NOT NULL,
+  `fungsi` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `vitamin`
+--
+
+INSERT INTO `vitamin` (`id`, `kode`, `vitamin`, `sumber_vitamin`, `fungsi`) VALUES
+(75, 'V01', 'A (Thiamin)', 'susu, ikan, sayur-sayuran, dan buah-buahan seperti cabai merah,wortel, pisang, dan papaya.', 'pengelihatan,pertumbuhan dan perkembangan, reproduksi, serta kekebalan tubuh.'),
+(76, 'V02', 'B1 (Thiamin)', 'beras merah, ragi, gandum, kedelai, susu, kacang tanah dan kacang-kacangan.', 'Sebagai koenzim berbagai reaksi metabolisme energi serta dapat menjaga kesehatan saraf dan otot.'),
+(77, 'V03', 'B2 (Riboflavin)', 'sayur segar, kning telur, kacang kedelai dan susu.', 'Membantu pertumbuhan dan perawatan jaringan erta membantu metabolisme karbohidrat, lemak, dan protein.'),
+(78, 'V04', 'B3  (Niacin)', 'hati lembu, Ragi yang ditapai, sayur-sayuran segar, keju, kacang kedelai, kuning telur, susu, ubi kentang, tomat dan Gandum.', 'Menjaga kadar gula darah, dan menetralisir berbagai jenis senyawa racun.'),
+(79, 'V05', 'B5 (Asam Pantotenat)', 'Daging, susu, sayur, hati, kacang hijau', 'Membentuk antibodi, serta membantu menukarkan lemak, karbohidrat dan protein pada tenaga.'),
+(80, 'V06', 'B6 (Piridoksin)', 'susu, kacang hijau, dan sayur - sayuran', 'Berfungsi sebagai metabolisme protein.'),
+(81, 'V07', 'B12 (Kobalamin)', 'telur, hati, dan daging, susu, usus, ikan, dan keju', 'Mengubah folat menjadi aktif, terutama sel-sel saluran cerna, sum-Sum tulang, dan Jaringan saraf'),
+(82, 'V08', 'C (Asam Askorbat)', 'buah - buahan seperti jeruk, jambu biji, kiwi dan sayur- sayuran seperti paprika merah.', 'Untuk pembentukan kolagen yaitu sejenis protein yang mengukuhkan kedudukan sel badan.'),
+(83, 'V09', 'D (Kalsiferol)', 'ikan, telur, susu, serta produk olahannya, seperti keju.', 'Membantu pembentukan dan pemeliharaan tulang, serta membantu pergeseran tulang dengan cara mengatur  agar kalsium tersedia di dalam darah untuk diendapkan pada proses pengerasan tulang.'),
+(85, 'V010', 'E (Tokoferol)', 'susu, mentega, ', 'Sebagai antioksidan, merangsang reaksi kekebalan, mencegah penyakit jantung koroner, mencegah keguguran, dan mencegah gangguan menstruasi.'),
+(87, 'V011', 'K (Filokuinona)', 'susu, kuning telur, dan sayuran segar (kol, kacang buncis dan brokoli)', 'Mencegah penuaan dini, serta membantu pembentukan protein dalam tulang dan ginjal.');
 
 --
 -- Indexes for dumped tables
@@ -374,7 +360,7 @@ ALTER TABLE `pemeriksaan_detail`
 --
 ALTER TABLE `pengetahuan`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id_penyakit` (`id_penyakit`,`id_gejala`);
+  ADD UNIQUE KEY `id_penyakit` (`id_vitamin`,`id_gejala`);
 
 --
 -- Indexes for table `pengguna`
@@ -383,9 +369,9 @@ ALTER TABLE `pengguna`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `penyakit`
+-- Indexes for table `vitamin`
 --
-ALTER TABLE `penyakit`
+ALTER TABLE `vitamin`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -396,7 +382,7 @@ ALTER TABLE `penyakit`
 -- AUTO_INCREMENT for table `gejala`
 --
 ALTER TABLE `gejala`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=321;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=362;
 --
 -- AUTO_INCREMENT for table `kemiripan`
 --
@@ -411,27 +397,27 @@ ALTER TABLE `konsultasi`
 -- AUTO_INCREMENT for table `pemeriksaan`
 --
 ALTER TABLE `pemeriksaan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=52;
 --
 -- AUTO_INCREMENT for table `pemeriksaan_detail`
 --
 ALTER TABLE `pemeriksaan_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=219;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=224;
 --
 -- AUTO_INCREMENT for table `pengetahuan`
 --
 ALTER TABLE `pengetahuan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=404;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=419;
 --
 -- AUTO_INCREMENT for table `pengguna`
 --
 ALTER TABLE `pengguna`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
--- AUTO_INCREMENT for table `penyakit`
+-- AUTO_INCREMENT for table `vitamin`
 --
-ALTER TABLE `penyakit`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=73;
+ALTER TABLE `vitamin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=88;
 --
 -- Constraints for dumped tables
 --

@@ -236,12 +236,12 @@ if($_SESSION['userdata'][0]['level'] == "1") :
                     </a>
                   </li>
                   <li class="site-menu-item">
-                    <a class="animsition-link" href="<?php echo site_url("penyakit") ?>">
-                      <span class="site-menu-title">PENYAKIT</span>
+                    <a class="animsition-link" href="<?php echo site_url("vitamin") ?>">
+                      <span class="site-menu-title">VITAMIN</span>
                     </a>
                   </li>
                   <li class="site-menu-item">
-                    <a class="animsition-link" href="<?php echo site_url("penyakit/pengetahuan") ?>">
+                    <a class="animsition-link" href="<?php echo site_url("vitamin/pengetahuan") ?>">
                       <span class="site-menu-title">PENGETAHUAN</span>
                     </a>
                   </li>
@@ -266,12 +266,12 @@ if($_SESSION['userdata'][0]['level'] == "1") :
 
 <?php endif; ?>
 
-<li class="site-menu-item">
-                    <a class="animsition-link" href="<?php echo site_url("penyakit/listview"); ?>">
+<!-- <li class="site-menu-item">
+                    <a class="animsition-link" href="<?php echo site_url("vitamin/listview"); ?>">
                        <i class="site-menu-icon fa-lightbulb-o
-" aria-hidden="true"></i>INFORMASI PENYAKIT
+" aria-hidden="true"></i>INFORMASI VITAMIN
                     </a>
-              </li>
+              </li> -->
               <li class="site-menu-item">
                     <a class="animsition-link" href="<?php echo site_url("konsultasi"); ?>">
                        <i class="site-menu-icon fa-life-bouy" aria-hidden="true"></i>KONSULTASI
@@ -318,7 +318,7 @@ if($_SESSION['userdata'][0]['level'] == "1") :
     <footer class="site-footer">
       <div class="site-footer-legal">© 2019 USTJ - Jayapura </div>
       <div class="site-footer-right">
-        Created  with <i class="red-600 wb wb-heart"></i> by  Riani
+        Created  with <i class="red-600 wb wb-heart"></i> by  Edhita
       </div>
     </footer>
    
