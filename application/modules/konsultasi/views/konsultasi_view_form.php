@@ -85,6 +85,31 @@
 
 </form>
 
+<div class="row mt-5">
+	<div class="col-md-12">
+		<h2> REFERENSI RULE </h2>
+	 
+<?php 
+foreach($rec_vitamin->result() as $row) : 
+?>
+    <h4><?php echo $row->vitamin; ?></h4>
+Gejala : <br />
+    <ul>
+    <?php  
+        $rec_gejala = $this->cm->get_gejala_by_vitamin($row->id);
+        foreach($rec_gejala->result() as $rg) : 
+
+    ?>
+        <li><?php  echo $rg->gejala; ?></li>
+    <?php endforeach; ?>
+    </ul>
+<hr />
+<?php endforeach; ?>
+
+	</div>
+
+</div>
+
 <script type="text/javascript">
 $(document).ready(function(){
 	$("#gejala_id").select2();

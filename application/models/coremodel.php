@@ -25,7 +25,8 @@ function arr_dropdown($vTable, $vINDEX, $vVALUE, $vORDERBY){
 
 
  function arr_dropdown_gejala(){
-    $this->db->order_by("kode");
+    $this->db->_protect_identifiers = FALSE;
+    $this->db->order_by("cast(substring(kode,3,3) as SIGNED )",true);
     $res = $this->db->get("gejala");
     $arr = array();
     foreach($res->result() as $row) : 
@@ -63,6 +64,19 @@ function arr_dropdown_vitamin(){
     return $this->db->get();
 
  }
+
+function get_gejala_by_vitamin($vitamin_id) {
+
+    $this->db->select('g.*')
+    ->from('gejala g')
+    ->join('pengetahuan p','p.id_gejala = g.id')
+    ->where('p.id_vitamin',$vitamin_id);
+    $res = $this->db->get();
+    return $res; 
+
+}
+
+
 
 }
 ?>

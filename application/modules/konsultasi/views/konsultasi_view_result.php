@@ -4,6 +4,10 @@
 </div>
 <div class="card-body">
 
+
+<?php 
+if($found == 1 ) { 
+?>
 <div class="row">
 	<div class="col-md-3"><strong> Nama Pasien </strong></div>
 	<div class="col-md-3">: <?php echo $userdata['nama']; ?> </div>
@@ -26,9 +30,7 @@
 
 <HR />
 
-<?php 
-if($found == 1 ) { 
-?>
+
 
 <div class="row">
 	<div class="col-md-8">
@@ -60,6 +62,9 @@ else {   ?>
 <div class="row">
 	<div class="col-md-12">
 		<h4> DATA TIDAK DITEMUKAN </h4>
+		<p>
+			Maaf Proses Penelusuran tidak bisa di lanjutkan
+		</p>
 	</div>
 
 </div>

@@ -72,7 +72,7 @@ foreach($record->result() as $row) :
 
 					 
 					<div class="form-group">
-						<label for="gejala" class="form-control-label">Penyakit :</label>
+						<label for="gejala" class="form-control-label">Vitamin :</label>
 
 						<?php 
 	$arr_vitamin = $this->cm->arr_dropdown_vitamin();

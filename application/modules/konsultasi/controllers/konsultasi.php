@@ -20,6 +20,10 @@ class konsultasi extends master_controller {
 
 
 
+
+		$data_array['rec_vitamin'] = $this->db->get("vitamin");
+
+
 		 
 		 
 		$content = $this->load->view($this->controller."_view_form",$data_array,true);
@@ -275,21 +279,7 @@ function laporan(){
 
   $this->method = "laporan";
 
-$sql = " select * from ( 
-SELECT p.*, 
-       count(pm.id) as jumlah , 
-      sum( if(u.jk='L',1,0)) as L,
-      sum( if(u.jk='P',1,0)) as P     
-  
-    FROM vitamin p 
-left join pemeriksaan pm on p.id = pm.vitamin_id
-left join pengguna u on u.id = pm.user_id 
-  group by p.id 
-  ) x 
-  order by x.jumlah desc
-";
-
-$data_array['record'] = $this->db->query($sql);
+$data_array=array();
 
 $content = $this->load->view($this->controller."_laporan_view",$data_array,true);
 
@@ -300,6 +290,31 @@ $this->render();
 
 }
 
+
+function get_laporan(){
+
+$post = $this->input->post();
+extract($post);
+
+$sql = "SELECT p.*, 
+       count(pm.id) as jumlah , 
+      sum( if(u.jk='L',1,0)) as L,
+      sum( if(u.jk='P',1,0)) as P     
+  
+    FROM vitamin p 
+
+ join pemeriksaan pm on p.id = pm.vitamin_id
+ join pengguna u on u.id = pm.user_id 
+ where year(pm.tanggal) = '$tahun'
+ and month(pm.tanggal) = '$bulan'
+  group by p.id 
+";
+
+$data_array['record'] = $this->db->query($sql);
+$this->load->view($this->controller."_laporan_table",$data_array);
+
+
+}
 
 
 }
