@@ -218,7 +218,7 @@ if($res->num_rows() > 0 ) {
 	$this->db->select('g.*')->from('gejala g')
 	->join('pemeriksaan_detail pd','pd.gejala_id=g.id')
 	->join('pemeriksaan p','p.id = pd.pemeriksaan_id ')
-	->where("p.vitamin_id",$dt_vitamin->id);
+	->where("p.id",$id);
 	$data_array['rec_gejala'] = $this->db->get();
 
 	$this->db->where("id",$dt_vitamin->id);
